@@ -1,59 +1,458 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE
+html>
+<html lang="en">
 <head>
-    <title>My Colorful Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            /* Colorful gradient background */
-            background: linear-gradient(to right, #ff9966, #ff5e62, #6666ff, #33ccff);
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 5px;
-            margin-top: 30px;
-        }
-        header {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            border-radius: 5px 5px 0 0;
-        }
-        h1 {
-            margin-top: 0;
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.8em;
-            color: white;
-            text-shadow: 1px 1px 2px black;
-        }
-    </style>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width,
+ initial-scale=1.0">    
+<title>Your
+ Name's Blog</title>
+     <style>
+         
+/* Color Variables */         
+:root {             
+--primary-blue: #5b9bd5;            
+--soft-blue: 
+#c2d6eb;             
+--primary-green: 
+#70c1a1;             
+--soft-green: #c5e8da;            
+--accent-teal: 
+#4aaaa5;             
+--light-bg: #f8fcfc;            
+--dark-text: 
+#333333;             
+--medium-text: #666666;         }                
+/* Base Styles */         * {            
+margin: 
+0;             
+padding: 0;            
+box-sizing: border-box;            
+font-family: 
+'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;         }                
+body {            
+background-color:
+var(--light-bg);            
+color: 
+var(--dark-text);             
+line-height: 1.6;         }                
+/* Header Styles */        
+header {            
+background: 
+linear-gradient(135deg,
+var(--primary-blue),
+var(--primary-green));            
+color: white;            
+padding: 
+1.5rem 0;            
+box-shadow: 
+0 2px 15px rgba(0,
+0, 
+0, 0.1);         }                
+.header-container {            
+max-width: 
+1200px;             
+margin: 0 auto;            
+display: flex;            
+justify-content: space-between;            
+align-items: center;            
+padding: 
+0 20px;         }                
+.site-title {            
+font-size: 
+2.2rem;             
+font-weight: 700;            
+text-shadow: 
+1px 1px 3px rgba(0,
+0, 
+0, 0.2);         }                
+/* Navigation Styles */        
+nav {            
+background-color: white;            
+box-shadow: 
+0 2px 10px rgba(0,
+0, 
+0, 0.08);         }                
+.nav-container {            
+max-width: 
+1200px;             
+margin: 0 auto;            
+padding: 
+0 20px;         }                
+.main-menu {            
+display: flex;            
+list-style: none;         }                
+.main-menu >
+li {            
+position: relative;         }                
+.main-menu >
+li > 
+a {             
+display: block;             
+padding: 15px 20px;            
+color: 
+var(--dark-text);             
+text-decoration: none;             
+font-weight: 500;            
+transition: color
+0.3s;         }                
+.main-menu >
+li > 
+a:hover {            
+color: 
+var(--primary-blue);         }                 
+/* Dropdown Menu Styles */         
+.dropdown {             
+position: absolute;             
+top: 100%;            
+left: 
+0;             
+background-color: white;             
+width: 200px;            
+box-shadow: 
+0 2px 10px rgba(0,
+0, 
+0, 0.1);            
+border-radius:
+0 0 4px 4px;
+             opacity:
+0;             
+visibility: hidden;             
+transition: all 0.3s;            
+z-index: 
+999;         }                 
+.main-menu li:hover .dropdown {    
+         opacity:
+1;             
+visibility: visible;         }                 
+.dropdown li {            
+list-style: none;         }                
+.dropdown li a {            
+display: block;            
+padding: 
+10px 20px;            
+color: 
+var(--medium-text);             
+text-decoration: none;             
+transition: all 0.3s;         }                
+.dropdown li a:hover {
+             background-color:
+var(--soft-blue);            
+color: 
+var(--primary-blue);         }                 
+/* Main Content Area */         
+.main-container {             
+max-width: 1200px;            
+margin: 
+30px auto;             
+display: grid;             
+grid-template-columns: 
+7fr 3fr;            
+gap: 
+30px;             
+padding: 0 20px;         }                
+/* Blog Post Styles */        
+.post {            
+background-color: white;            
+border-radius:
+8px;             
+overflow: hidden;             
+box-shadow: 0 2px 10px rgba(0,
+0, 
+0, 0.05);            
+margin-bottom:
+30px;            
+transition: transform
+0.3s, box-shadow 
+0.3s;         }                 
+.post:hover {            
+transform: 
+translateY(-5px);            
+box-shadow: 
+0 10px 20px rgba(0,
+0, 
+0, 0.1);         }                
+.post-img {            
+width: 
+100%;             
+height: 250px;            
+background-color:
+var(--soft-blue);            
+display: flex;            
+align-items: center;            
+justify-content: center;            
+color: 
+var(--primary-blue);             
+font-weight: bold;         }                 
+.post-content {             
+padding: 20px;         }                
+.post-date {            
+font-size: 
+0.9rem;             
+color: var(--medium-text);            
+margin-bottom:
+10px;         }                
+.post-title {            
+font-size: 
+1.6rem;             
+margin-bottom: 15px;            
+color: 
+var(--primary-blue);         }                 
+.post-excerpt {             
+margin-bottom: 15px;            
+color: 
+var(--medium-text);         }                 
+.read-more {             
+display: inline-block;             
+padding: 8px 16px;            
+background-color:
+var(--soft-blue);            
+color: 
+var(--primary-blue);             
+text-decoration: none;             
+border-radius: 4px;            
+font-weight: 
+500;             
+transition: background-color 
+0.3s;         }                 
+.read-more:hover {            
+background-color:
+var(--primary-blue);            
+color: white;         }                
+/* Sidebar Styles */        
+.sidebar {            
+position: sticky;            
+top: 
+30px;         }                 
+.sidebar-widget {             
+background-color: white;             
+border-radius: 8px;            
+padding: 
+20px;             
+margin-bottom: 30px;            
+box-shadow: 
+0 2px 10px rgba(0,
+0, 
+0, 0.05);         }                
+.widget-title {            
+color: 
+var(--accent-teal);             
+margin-bottom: 15px;            
+padding-bottom:
+10px;            
+border-bottom:
+2px solid 
+var(--soft-green);         }                 
+.categories-list, 
+.recent-posts-list {             
+list-style: none;         }                 
+.categories-list li,
+.recent-posts-list li {            
+margin-bottom:
+10px;         }                
+.categories-list a,
+.recent-posts-list a {            
+color: 
+var(--medium-text);             
+text-decoration: none;             
+transition: color 
+0.3s;             
+display: block;         }                 
+.categories-list a:hover,
+.recent-posts-list a:hover {            
+color: 
+var(--primary-green);         }                 
+.recent-post-date {             
+font-size: 0.85rem;            
+color: 
+var(--medium-text);         }                 
+/* Footer Styles */         
+footer {             
+background: linear-gradient(135deg,
+var(--primary-green),
+var(--primary-blue));            
+color: white;            
+padding: 
+30px 0;            
+margin-top: 
+50px;         }                 
+.footer-container {             
+max-width: 1200px;            
+margin: 
+0 auto;             
+text-align: center;             
+padding: 0 20px;         }                
+/* Responsive Adjustments */        
+@media (max-width:
+768px) {            
+.main-container {                
+grid-template-columns:
+1fr;             }                        
+.sidebar {                
+position: static;             }         }    
+</style>
 </head>
 <body>
-    <header>
-        <h1>My Colorful Website</h1>
-    </header>
-    <div class="container">
-        <h2>Welcome to My Website!</h2>
-        <p>This is my website with a colorful background.</p>
-        <p>I'm learning how to build websites from scratch.</p>
-        
-        <h3>About This Site</h3>
-        <p>This site features a beautiful multicolored background gradient. As I learn more HTML and CSS, I'll continue to improve and expand it.</p>
-    </div>
-    <footer>
-        Created with GitHub Pages - 2025
-    </footer>
+     <!-- Header -->
+     <header>
+         <div class="header-container">
+             <h1 class="site-title">Your
+ Name's Blog</h1>
+         </div>
+     </header>
+         <!-- Navigation -->
+     <nav>
+         <div class="nav-container">
+             <ul class="main-menu">
+                 <li><a href="#">Home</a></li>
+                 <li>
+                     <a href="#">Categories</a>
+                     <ul class="dropdown">
+                         <li><a href="#">Technology</a></li>
+                         <li><a href="#">Lifestyle</a></li>
+                         <li><a href="#">Travel</a></li>
+                         <li><a href="#">Food</a></li>
+                     </ul>
+                 </li>
+                 <li>
+                     <a href="#">Archives</a>
+                     <ul class="dropdown">
+                         <li><a href="#">2025</a></li>
+                         <li><a href="#">2024</a></li>
+                         <li><a href="#">2023</a></li>
+                     </ul>
+                 </li>
+                 <li><a href="#">About</a></li>
+                 <li><a href="#">Contact</a></li>
+             </ul>
+         </div>
+     </nav>
+         <!-- Main Content -->
+     <div class="main-container">
+         <!-- Blog Posts Section -->
+         <main class="posts-container">
+             <!-- Blog Post 1 -->
+             <article class="post">
+                 <div class="post-img">Featured
+ Image</div>
+                 <div class="post-content">
+                     <div class="post-date">March
+ 5, 2025</div>
+                     <h2 class="post-title">Getting
+ Started with Web Development</h2>
+                     <p class="post-excerpt">
+                         Learning web development can seem daunting at first, but with the right resources and approach, anyone can create beautiful websites. In this post, I'll share my journey and some helpful tips for beginners.                    
+</p>
+                     <a href="#" class="read-more">Read
+ More</a>
+                 </div>
+             </article>
+                         <!-- Blog Post 2 -->
+             <article class="post">
+                 <div class="post-img">Featured
+ Image</div>
+                 <div class="post-content">
+                     <div class="post-date">February
+ 28, 2025</div>
+                     <h2 class="post-title">The
+ Power of GitHub Pages</h2>
+                     <p class="post-excerpt">
+                         Hosting your website doesn't have to be expensive or complicated. GitHub Pages offers a free and straightforward solution for hosting static websites. Let me show you how I set up my blog using this powerful platform.              
+       </p>
+                     <a href="#" class="read-more">Read
+ More</a>
+                 </div>
+             </article>
+                         <!-- Blog Post 3 -->
+             <article class="post">
+                 <div class="post-img">Featured
+ Image</div>
+                 <div class="post-content">
+                     <div class="post-date">February
+ 20, 2025</div>
+                     <h2 class="post-title">Creating
+ Stunning Color Schemes</h2>
+                     <p class="post-excerpt">
+                         Colors can make or break your website design. In this post, I explore how to create harmonious color schemes using soft blues and greens that create a calming and professional atmosphere.                    
+</p>
+                     <a href="#" class="read-more">Read
+ More</a>
+                 </div>
+             </article>
+         </main>
+                 <!-- Sidebar -->
+         <aside class="sidebar">
+             <!-- Categories Widget -->
+             <div class="sidebar-widget">
+                 <h3 class="widget-title">Categories</h3>
+                 <ul class="categories-list">
+                     <li><a href="#">Web
+ Development</a></li>
+                     <li><a href="#">Design
+ Inspiration</a></li>
+                     <li><a href="#">Coding
+ Tips</a></li>
+                     <li><a href="#">Technology
+ News</a></li>
+                     <li><a href="#">Personal
+ Projects</a></li>
+                 </ul>
+             </div>
+                         <!-- Recent Posts Widget -->
+             <div class="sidebar-widget">
+                 <h3 class="widget-title">Recent
+ Posts</h3>
+                 <ul class="recent-posts-list">
+                     <li>
+                         <a href="#">Getting
+ Started with Web Development</a>
+                         <div class="recent-post-date">March
+ 5, 2025</div>
+                     </li>
+                     <li>
+                         <a href="#">The
+ Power of GitHub Pages</a>
+                         <div class="recent-post-date">February
+ 28, 2025</div>
+                     </li>
+                     <li>
+                         <a href="#">Creating
+ Stunning Color Schemes</a>
+                         <div class="recent-post-date">February
+ 20, 2025</div>
+                     </li>
+                     <li>
+                         <a href="#">My
+ First Coding Project</a>
+                         <div class="recent-post-date">February
+ 15, 2025</div>
+                     </li>
+                 </ul>
+             </div>
+                         <!-- About Widget -->
+             <div class="sidebar-widget">
+                 <h3 class="widget-title">About
+ Me</h3>
+                 <p>Welcome
+ to my blog! I'm passionate about web development and sharing my journey as I learn to create beautiful websites.</p>
+             </div>
+         </aside>
+     </div>
+         <!-- Footer -->
+     <footer>
+         <div class="footer-container">
+             <p>&copy; 2025
+ Your Name's Blog. All rights reserved.</p>
+         </div>
+     </footer>
+         <!-- Add this script for dropdown menu functionality -->
+     <script>
+         
+// This script is not strictly necessary for the dropdowns to work        
+// They work with CSS :hover, but this will make them more accessible        
+document.addEventListener('DOMContentLoaded',
+function() {            
+// You could add more advanced functionality here later         });    
+</script>
 </body>
 </html>
