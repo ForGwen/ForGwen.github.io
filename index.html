@@ -1,33 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My First Website</title>
+    <title>My Colorful Website</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             line-height: 1.6;
-            background-color: #f8f8f8;
+            /* Colorful gradient background */
+            background: linear-gradient(to right, #ff9966, #ff5e62, #6666ff, #33ccff);
+            color: #333;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: white;
-            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
         }
         h1 {
-            color: #333;
+            margin-top: 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: white;
+            text-shadow: 1px 1px 2px black;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>My Colorful Website</h1>
+    </header>
     <div class="container">
-        <h1>Hello World!</h1>
-        <p>This is my first website hosted on GitHub Pages.</p>
-        <p>I'm learning how to build websites!</p>
+        <h2>Welcome to My Website!</h2>
+        <p>This is my website with a colorful background.</p>
+        <p>I'm learning how to build websites from scratch.</p>
+        
+        <h3>About This Site</h3>
+        <p>This site features a beautiful multicolored background gradient. As I learn more HTML and CSS, I'll continue to improve and expand it.</p>
     </div>
+    <footer>
+        Created with GitHub Pages - 2025
+    </footer>
 </body>
 </html>
